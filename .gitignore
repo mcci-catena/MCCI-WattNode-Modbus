@@ -36,9 +36,11 @@
 Release
 *.vcxproj
 *.vcxproj.filters
+*.vcxproj.user
 __vm
 .vs
 *.sln
+*.vcxitems
 
 # files from vscode
 .vscode
