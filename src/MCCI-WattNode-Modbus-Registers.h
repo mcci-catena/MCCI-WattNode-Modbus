@@ -28,7 +28,7 @@ namespace McciWattNodeModbus {
 
 // create a version number for comparison
 static constexpr uint32_t makeVersion(
-		uint8_t major, uint8_t minor, uint8_t patch, uint8_t local
+		uint8_t major, uint8_t minor, uint8_t patch, uint8_t local = 0
 		)
 		{
 		return ((uint32_t)major << 24u) | ((uint32_t)minor << 16u) | ((uint32_t)patch << 8u) | (uint32_t)local;
