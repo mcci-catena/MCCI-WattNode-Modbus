@@ -87,7 +87,7 @@ public:
 				      | static_cast<uint16_t>(vLow);
 
 		/* reject NANs */
-		if ((uImage & 0x7FE00000u) == 0x7FE00000u)
+		if ((uImage & 0x7F800000u) == 0x7F800000u)
 			{
 			if (pError != nullptr)
 				*pError = true;
