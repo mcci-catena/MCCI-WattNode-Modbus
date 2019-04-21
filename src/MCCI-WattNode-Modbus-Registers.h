@@ -21,6 +21,7 @@ Author:
 
 #include <stdint.h>
 #include <cstring>
+#include <type_traits>
 
 #include "MCCI-WattNode-Modbus-tuple.h"
 
@@ -59,7 +60,7 @@ static constexpr uint8_t getLocal(uint32_t v)
 		}
 
 // version of library, for use in static_asserts
-static constexpr uint32_t kVersion = makeVersion(0,2,0,0);
+static constexpr uint32_t kVersion = makeVersion(0,2,0,1);
 
 class WattNodeModbus_Framework
 	{
@@ -79,7 +80,6 @@ public:
 		{
 		return TRegister(address + 1);
 		}
-
 
 	static float regval_getfloat(int16_t vLow, int16_t vHigh, bool *pError = nullptr)
 		{
@@ -141,7 +141,7 @@ public:
 class WattNode_WNC : public WattNodeModbus_Framework 
 	{
 public:
-	enum class Register : uint16_t;
+	enum Register : uint16_t;
 
 	// It would be nice to write `auto` here, but some GCCs
 	// fail. See https://stackoverflow.com/questions/24617679/workaround-for-debug-symbol-error-with-auto-member-function
@@ -158,7 +158,7 @@ public:
 		return WattNodeModbus_Framework::getRegister<Register>(address);
 		}
 
-	enum class Register : uint16_t
+	enum Register : uint16_t
 		{
 		DummyReg_i32 = 1,
 		EnergySum_f32 = 1001,
@@ -339,7 +339,7 @@ public:
 class WattNode_WND : public WattNodeModbus_Framework
 	{
 public:
-	enum class Register : uint16_t;
+	enum Register : uint16_t;
 
 	// It would be nice to write `auto` here, but some GCCs
 	// fail. See https://stackoverflow.com/questions/24617679/workaround-for-debug-symbol-error-with-auto-member-function
@@ -356,7 +356,7 @@ public:
 		return WattNodeModbus_Framework::getRegister<Register>(address);
 		}
 
-	enum class Register : uint16_t
+	enum Register : uint16_t
 		{
 		DummyReg_i32 = 1,
 		EnergySum_f32 = 1001,
