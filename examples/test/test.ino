@@ -1,5 +1,22 @@
+/*
+
+Module:  MCCI-WattNode-Modbus/examples/test/test.ino
+
+Function:
+	Test script: confirms that the header files compile, and lightly tests.
+
+Copyright notice:
+	See LICENSE file accompanying this work.
+
+Author:
+	Terry Moore, MCCI Corporation	April, 2018
+
+*/
+
 #include <MCCI-WattNode-Modbus-Registers.h>
 
+//
+// All the work is associated with 
 using WattNodeModbus = McciWattNodeModbus::WattNode_WNC;
 
 void setup(void)
