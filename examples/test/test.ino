@@ -1,5 +1,7 @@
 #include <MCCI-WattNode-Modbus-Registers.h>
 
+using WattNodeModbus = McciWattNodeModbus::WattNode_WNC;
+
 void setup(void)
 	{
 	while (! Serial)
